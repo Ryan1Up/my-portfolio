@@ -1,9 +1,50 @@
 #content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  float: left;
+  
 }
 
 #greeting-container {
   margin-top: 20px;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+    height: 30px;
+    margin:0;
+    background-color: lavender;
+    padding: 20px;
+
+}
+
+li {
+    
+    color: white;
+    font-size: 48;
+    font-style: bold;
+    font-family: sans-serif;
+    background-color: plum;
+    overflow: auto;
+    display: inline;
+    vertical-align: middle;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+li:hover {
+    color: purple;
+    background-color: violet;
+}
+
+#menuBar{
+    background-color: plum;
+    height:30px;
+    overflow: hidden;
+
 }

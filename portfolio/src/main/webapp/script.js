@@ -26,3 +26,16 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function postRandomFact() {
+    const randFacts = ['My favorite subject is physics',
+                    'I\'m the first in my family to attend a four-year university', 
+                    'Otters are my favorite animal'];
+
+    const fact = randFacts[Math.floor(Math.random() * randFacts.length)];
+
+    const factContainer = document.getElementById('random-fact');
+    factContainer.innerText = fact; 
+}
+
+
