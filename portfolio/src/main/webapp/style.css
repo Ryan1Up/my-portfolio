@@ -1,13 +1,3 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  float: left;
-  
-}
-
-#greeting-container {
-  margin-top: 20px;
-}
 
 
 ul {
@@ -20,22 +10,27 @@ h1 {
     height: 30px;
     margin:0;
     background-color: lavender;
-    padding: 20px;
-
+    padding: 10px;
+}
+h2 {
+    height: 30px;
+    margin:0;
+    background-color: lavender;
+    padding: 10px;
 }
 
+
 li {
-    
+    float: left;
     color: white;
-    font-size: 48;
-    font-style: bold;
+    font-size: 64;
     font-family: sans-serif;
     background-color: plum;
     overflow: auto;
-    display: inline;
-    vertical-align: middle;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    list-style: none;
+    padding-top: 5px;
 }
 li:hover {
     color: purple;
@@ -47,4 +42,9 @@ li:hover {
     height:30px;
     overflow: hidden;
 
+}
+
+li.active {
+    height: 30px;
+    background-color: cornflowerblue;
 }
