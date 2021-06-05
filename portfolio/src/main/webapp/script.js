@@ -50,5 +50,15 @@ $(document).ready(function(){
      $("#aboutMeContent").animate({bottom: "+=250", opacity: '1.0'}, 1000)
     
      
+})
+$('#workExp').waypoint(function(){
+    $('#workProfile').css({
+        animation: "fromLeft 2s"
     })
+})
+$('#education').waypoint(function(){
+    $('#educationProfile').css({
+        animation: "fromLeft 2s"
+    })
+})
 });

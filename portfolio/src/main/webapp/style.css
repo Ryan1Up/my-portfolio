@@ -109,6 +109,7 @@ body {
 }
 
 .description {
+    position: static;
     text-align: center;
     outline-width: 1px;
     outline-style: groove;
@@ -144,4 +145,9 @@ body {
 
 .imageFloatLeft{
     float: left;
+}
+
+@keyframes fromLeft{
+    from{left: 500; opacity: 0;}
+    to{left: 250; opacity: 1.0;}
 }
