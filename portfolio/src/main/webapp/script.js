@@ -39,3 +39,10 @@ function postRandomFact() {
 }
 
 
+$(document).ready(function(){
+ $(".userImg").ready(function(){
+     $(".userImg").hide(0)
+     $(".userImg").show(500)
+     $("#abtMeImg").slide({right:'500px'})
+ })
+});
