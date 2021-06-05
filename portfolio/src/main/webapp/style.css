@@ -85,7 +85,7 @@ body {
     
     margin: auto;
     text-align: center;
-    width: 25%;
+    width: 45%;
     outline-width: 4px;
     outline-style: inset;
     outline-color: violet;
@@ -98,6 +98,7 @@ body {
     font-size: 20px;
     vertical-align: text-top;
     padding-bottom: 50px;
+    
 }
 
 .description {
@@ -113,9 +114,11 @@ body {
 .userImg {
     margin-top: 20px;
     padding: 4px;
+    margin-bottom:10px;
     border-radius: 50%;
     height: 120px;
     width: 120px;
     border-color: purple;
     background-color: purple;  
 }
+
