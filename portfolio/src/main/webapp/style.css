@@ -108,7 +108,8 @@ body {
     outline-color: aliceblue;
     width: 80%;
     margin: auto;
-
+    overflow-wrap: normal;
+    padding: 10px;
 }
 
 .userImg {
@@ -120,5 +121,20 @@ body {
     width: 120px;
     border-color: purple;
     background-color: purple;  
+    position: relative;
+    
 }
 
+#aboutMeContent {
+    text-align: center;
+    margin-top: 30px;
+    overflow-wrap: normal;
+    width: 70%; 
+    float: right;
+    position: relative;
+    
+}
+
+.imageFloatLeft{
+    float: left;
+}

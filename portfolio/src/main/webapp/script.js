@@ -43,6 +43,12 @@ $(document).ready(function(){
  $(".userImg").ready(function(){
      $(".userImg").hide(0)
      $(".userImg").show(500)
-     $("#abtMeImg").animate({right: '200px'})
- })
+     $("#aboutMeContent").hide(0)
+     $("#aboutMeContent").animate({bottom: "-=250", opacity: '0'})
+     $("#aboutMeContent").show(500)
+     $("#abtMeImg").addClass("imgFloatLeft")
+     $("#aboutMeContent").animate({bottom: "+=250", opacity: '1.0'}, 1000)
+    
+     
+    })
 });
