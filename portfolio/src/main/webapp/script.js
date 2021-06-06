@@ -48,6 +48,7 @@ $(document).ready(function(){
      $("#aboutMeContent").show(500)
      $("#abtMeImg").addClass("imgFloatLeft")
      $("#aboutMeContent").animate({bottom: "+=250", opacity: '1.0'}, 1000)
+     $(".description").addClass("overflowOverlay")
     
      
 })

@@ -144,11 +144,12 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
     margin: auto;
-    overflow-wrap: auto;
-    overflow: overlay;
     padding: 10px;
 }
 
+.overflowOverlay{
+    overflow:overlay;
+}
 .userImg {
     margin-top: 20px;
     padding: 4px;
