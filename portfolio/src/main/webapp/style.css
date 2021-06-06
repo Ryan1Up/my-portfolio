@@ -144,7 +144,9 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
     margin: auto;
-    padding: 10px;
+    padding: 2.5%;
+    vertical-align: middle;
+    
 }
 
 .overflowOverlay{

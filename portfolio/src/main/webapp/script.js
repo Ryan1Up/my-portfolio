@@ -40,18 +40,18 @@ function postRandomFact() {
 
 
 $(document).ready(function(){
- $(".userImg").ready(function(){
-     $(".userImg").hide(0)
-     $(".userImg").show(500)
-     $("#aboutMeContent").hide(0)
-     $("#aboutMeContent").animate({bottom: "-=250", opacity: '0'})
-     $("#aboutMeContent").show(500)
-     $("#abtMeImg").addClass("imgFloatLeft")
-     $("#aboutMeContent").animate({bottom: "+=250", opacity: '1.0'}, 1000)
-     $(".description").addClass("overflowOverlay")
-    
-     
-})
+    $(".userImg").ready(function(){
+        $(".userImg").hide(0)
+        $(".userImg").show(500)
+        $("#aboutMeContent").hide(0)
+        $("#aboutMeContent").animate({bottom: "-=25", opacity: '0'})
+        $("#aboutMeContent").show(500)
+        $("#abtMeImg").addClass("imgFloatLeft")
+        $("#aboutMeContent").animate({bottom: "+=25", opacity: '1.0'}, 1000)
+        $("aboutMeContent").delay(1000).ready(function(){
+            $(".description").delay(2500).addClass("overflowOverlay")
+        })
+     })
 $('#workExp').waypoint(function(){
     $('#workProfile').css({
         animation: "fromLeft 2s"
