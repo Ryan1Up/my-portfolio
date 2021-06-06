@@ -46,14 +46,25 @@ li a:hover {
     margin-top: 0px;
     background : #d0d3f1;
 }
+
 @media screen and (max-width: 900px) {
    .container {
       width: 60%;
+   }
+   .description{
+       width:80%;
    }
 }
 @media screen and (max-width: 600px) {
    .container {
       width: 100%;
+   }
+   .description{
+       width:100%;
+   }
+   #aboutMeContent {
+       width:100%;
+       margin: 20px;
    }
 }
 
@@ -64,13 +75,13 @@ body {
 }
 
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 20px;
+  padding: 25px;
+  font-size: 35px;
+  width: 60px;
+  height: 60px;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
-  margin: 5px 2px;
   border-radius: 50%;
 }
 .fa:hover {
@@ -93,8 +104,8 @@ body {
 
 .fa-github {
   
-    width:60px;
-    height:60px;
+    width:100px;
+    height:100px;
     
 }
 

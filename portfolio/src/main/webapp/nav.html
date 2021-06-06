@@ -1,4 +1,4 @@
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <h1 class="mainHeader">Ryan's Portfolio</h1>
         <h3>Aspiring Software Engineer and Machine Learning Specialist</h3>
         <div id="nav-bar">
@@ -13,11 +13,9 @@
         function test(){
             var path = window.location.pathname;
             var pageName = path.split("/").pop();
-            console.log(pageName);
-            var p = document.getElementById("nav__index");
-            console.log(p);
+            var activeP = "#nav__" + pageName.split('.')[0];
 
-            p.ClassList.add("active");
+            $(activeP).addClass("active");
         }
 
         test();
