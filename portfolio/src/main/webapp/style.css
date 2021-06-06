@@ -46,6 +46,16 @@ li a:hover {
     margin-top: 0px;
     background : #d0d3f1;
 }
+@media screen and (max-width: 900px) {
+   .container {
+      width: 60%;
+   }
+}
+@media screen and (max-width: 600px) {
+   .container {
+      width: 100%;
+   }
+}
 
 
 

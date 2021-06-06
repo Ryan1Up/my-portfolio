@@ -38,7 +38,33 @@ function postRandomFact() {
     factContainer.innerText = fact; 
 }
 
-
+function setActive() {
+    var path = window.location.pathname;
+    var pageName = path.split("/").pop();
+    var pages = ["index.html", "aboutme.html", "contact.html", "projects.html"]
+    for( page in pages){
+        if(pageName === pages[page]){
+            pages[page] = pages[page].split('.')[0];
+            console.log(pages[page]);
+            var p = document.getElementById('nav__'+pages[page]);
+            if(p !== null){
+                p.addClass("active");
+            }
+        }else{
+            pages[page] = pages[page].split('.')[0];
+            console.log(pages[page]);
+            var p = document.getElementById('nav__'+pages[page]);
+            if(p !== null){
+                if(p.hasAttribute("active")){
+                p.classList.remove('active');
+                }
+            }
+            
+            
+        }
+    }
+}
+$(document).ready(setActive());
 $(document).ready(function(){
  $(".userImg").ready(function(){
      $(".userImg").hide(0)

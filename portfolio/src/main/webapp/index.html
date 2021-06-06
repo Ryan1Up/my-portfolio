@@ -12,18 +12,13 @@
     
 <body>
     
-    <div class="container">    
-        <h1 class="mainHeader">Ryan's Portfolio</h1>
-        <h3>Aspiring Software Engineer and Machine Learning Specialist</h3>
-        <div id="nav-bar">
-            <ul id="nav-buttons">
-                <li><a class="active"  href="index.html">Home</a></li>
-                <li><a href="aboutme.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-            </ul>
-        </div>
-
+    <div class="container">
+        <div id="nav_marker"></div>    
+        <!--navbar marker-->
+        <script>
+            $("#nav_marker").load("/nav.html")
+        </script>
+        <!--end navbar marker-->
         <div class="description" id="homeDescription">
             <div class="profile" id="homeProfile"><img class="userImg" src="images/me.jpg" alt=""></div>
             <h2 style="padding-top: 10px;">Welcome!</h2>

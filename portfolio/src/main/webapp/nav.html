@@ -1,0 +1,24 @@
+
+<h1 class="mainHeader">Ryan's Portfolio</h1>
+        <h3>Aspiring Software Engineer and Machine Learning Specialist</h3>
+        <div id="nav-bar">
+            <ul id="nav-buttons">
+                <li><a class="" id="nav__index" href="index.html">Home</a></li>
+                <li><a class="" id="nav__aboutme" href="aboutme.html">About Me</a></li>
+                <li><a class="" id="nav__projects" href="projects.html">Projects</a></li>
+                <li><a class="" id="nav__contact" href="contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+        <script>
+        function test(){
+            var path = window.location.pathname;
+            var pageName = path.split("/").pop();
+            console.log(pageName);
+            var p = document.getElementById("nav__index");
+            console.log(p);
+
+            p.ClassList.add("active");
+        }
+
+        test();
+        </script>
