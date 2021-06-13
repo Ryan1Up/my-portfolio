@@ -1,6 +1,7 @@
 .footer {
     background: linear-gradient(to right, var(--secondary-color),  var(--primary-color));
     margin: auto;
+    bottom: 0;
 }
 
 .footer a {
