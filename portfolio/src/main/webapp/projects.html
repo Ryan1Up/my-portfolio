@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/utility.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/projects.css">
         
         <title>Portfolio | Ryan Anderson</title>
         <link rel="icon" href="images/otter.png">
@@ -18,7 +19,66 @@
     
 <body onload="loadNav(), loadFooter()">
     <div class="navbar"></div>
-       
+     
+    <section class="projects">
+        <div class = "container grid">
+            <div class="card flex text-center">
+                <img class="grid-item" src="images/shiftLog.png" alt="">
+                <div>
+                    <h4>ShiftLog</h4>
+                    <p>This was a piece of software I wrote to automate making shift logs. These shift 
+                        logs were specific to my employer at the time. This was a personal program, and 
+                        not for use by the company. It was made solely for the purpose of making my life 
+                        easier. It produced a locally saved .xlsx file that I later email to the supervisor.
+                        The program was written in C++, and used the OpenXLSX library. The code has long since
+                        been lost, but I intend to re-code it someday for the nostalgia.
+                    </p>
+                </div>
+            </div>
+            <div class="card flex text-center">
+                <img class="grid-item" src="images/Placeholder.png" alt="">
+                <div>
+                    <h4>Unnamed</h4>
+                    <p>As an introduction to Java, I attempted to create a simple 2D game that involved many moving
+                        objects, and collision processing. I tried to make it as well rounded as possible, including 
+                        features like multiple levels, health/money tracking, interations, save files, etc.
+                        The original code is currently on a run down laptop, and I have only a draft repo
+                        up on github right now, under "shootEm".
+                    </p>
+                </div>
+            </div>
+            <div class="card flex text-center">
+                <img class="grid-item" src="images/Placeholder.png" alt="">
+                <div>
+                    <h4>Various Class Projects</h4>
+                    <p>I have had several class projects that became more than just a few lines of code.
+                        Some of these are:
+                    </p>
+                    <ul class="text-left">
+                        <li> AlgoRuntimeTester (Tested the run-time of various algorithms)</li>
+                        <li> Booth's Multiplication Algorithm Simulator (Simulated how this Algorithm runs through physical hardware)</li>
+                        <li> Cache/Mem Simulator (Simulated how internal CPU cache, and Memory work to access/load data)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card flex text-center">
+                <img class="grid-item" src="images/billManager.png" alt="">
+                <div>
+                    <h4>Bill Manager for Roomates</h4>
+                    <h6>Planned</h6>
+                    <p>I am planning to write a program that you will be able to access all accounts within 
+                        a household, and show any balances due. Along with the ability to "split-up" each
+                        bill evenly between roomates, and track who has paid in, or is able to pay in.
+                        I plan to use a Java server with Spring Boot to help run the backend, as well 
+                        as incorporate OAuth2.0 capabilites to allow automated capture of account statuses
+                        from various vendors. The front end is still to be determined.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
                 
     <footer class="footer">
     </footer>

@@ -74,13 +74,8 @@
     border-radius: 10px;
 }
 
-.footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .about-me-main .grid,
     .education .grid {
         grid-template-columns: 1fr;
