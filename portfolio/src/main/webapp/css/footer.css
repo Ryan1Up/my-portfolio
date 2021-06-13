@@ -1,0 +1,31 @@
+.footer {
+    background: linear-gradient(to right, var(--secondary-color),  var(--primary-color));
+    text-align: center;   
+}
+
+.footer a {
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.footer .container {
+    height: auto;
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer nav {
+    justify-self: center;
+}
+.footer nav .grid {
+    gap: 5px;
+    text-align: center;
+    width: 50%;
+}
+.footer .social {
+    margin: 10px;
+}
