@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html>
     <head>
         <meta lang="en-US">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/utility.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/maincontent.css">
+        <title>Portfolio | Ryan Anderson</title>
+        <link rel="icon" href="images/otter.png">
+        <script src="https://kit.fontawesome.com/5541884fd5.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="jquery.waypoints.min.js"></script>
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
     </head>
-    
-<body>
-    
-    <div class="container">
-        <div id="nav_marker"></div>    
-        <!--navbar marker-->
-        <script>
-            $("#nav_marker").load("/nav.html")
-        </script>
-        <!--end navbar marker-->
-        <div class="description" id="homeDescription">
-            <div class="profile" id="homeProfile"><img class="userImg" src="images/me.jpg" alt=""></div>
-            <h2 style="padding-top: 10px;">Welcome!</h2>
-                <h3 style="text-align: center; font-size: 16px;">
-                Hello, and welcome to my Portfolio.
-                My name is Ryan Anderson, and I am currently studying Computer Science at 
-                California State University, Fresno. I am not much of a UI/UX designer so 
-                this site might seem a bit rough.
-                </h3>            
-        </div>
-        
-        <div class="animContainer" id="landingPageContainer">
-            <!--Add sprite animations here that start on load
-                Attempt to add drag and drop for the sprites in container-->
-        </div>
+<body onload="loadNav(), loadFooter()">
+    <div class="navbar">
         
     </div>
-  </body>
+
+    <!-- Main content-->
+    <section class="main-content">
+        <div class="container grid">
+            <div class="main-content-img">
+                <img src="images/me.jpg" alt="">
+            </div>
+            <div class="main-content-text card">
+                <h1>Who Am I?</h1>
+                <p>
+                    My name is Ryan Anderson. 
+                    First things first, I'm not much
+                    of a front-end developer, my apologies if this site is rough.
+                    My main interests are Software Engineering and Machine Learning,
+                    although I do also have a strong interest in Algorithm Development
+                    as well.
+                </p>
+                <a href="aboutme.html" class="btn btn-outline">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer"></footer>
+</body>
 </html>

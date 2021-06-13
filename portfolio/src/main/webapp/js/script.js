@@ -1,10 +1,10 @@
 function loadNav() {
     
-    $(".navbar").load("../html/nav.html");
+    $(".navbar").load("../nav.html");
 }
 
 function loadFooter() {
-    $(".footer").load("../html/footer.html");
+    $(".footer").load("../footer.html");
 }
 
 function onLinkLoad(){
@@ -15,7 +15,7 @@ function onLinkLoad(){
 }
 
 function loadAboutNavMain() {
-    $("#about-content").load("../html/aboutMeContent.html");
+    $("#about-content").load("../aboutMeContent.html");
     console.log("About Me");
 }
 function loadAboutNavEducation(event) {
@@ -23,5 +23,5 @@ function loadAboutNavEducation(event) {
 }
 function loadAboutNavSkills(event) {
    
-    $("#about-content").load("../html/languages.html");
+    $("#about-content").load("../languages.html");
 }

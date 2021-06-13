@@ -27,7 +27,7 @@
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 80%;
     margin: 0 auto; /*0 - top bottom, auto - left right*/
     overflow: auto; /*fixed the white space at top*/
     padding: 0 40px;
@@ -171,7 +171,7 @@
 }
 
 
-@media (max-width: 785px){
+@media (max-width: 800px){
 
     .grid {
         display: grid;
@@ -179,8 +179,15 @@
     }
     .main-content .grid,
     .footer .grid,
-    .footer .grid-3 {
+    .footer .grid-3,
+    .footer {
         grid-template-columns: 1fr;
         justify-content: center;
+        align-items: center;
+        text-align: center;
     }   
+
+    .container {
+        max-width: 780px;
+    }
 }
