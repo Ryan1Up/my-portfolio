@@ -1,7 +1,9 @@
+footer {
+    bottom: 0;
+}
 .footer {
     background: linear-gradient(to right, var(--secondary-color),  var(--primary-color));
     margin: auto;
-    bottom: 0;
 }
 
 .footer a {
@@ -15,8 +17,7 @@
     margin: auto;
     padding: 10px;
     color: #fff;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 .footer nav {
@@ -33,7 +34,7 @@
 
 .footer .grid {
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 @media (max-width: 780px) {

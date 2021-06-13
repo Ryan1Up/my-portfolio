@@ -166,12 +166,15 @@
     padding: 3rem 0;
 }
 
+.roundedImg {
+    border-radius: 50%;
+}
 .text-center {
     text-align: center;
 }
 
 
-@media (max-width: 800px){
+@media (max-width: 768px){
 
     .grid {
         display: grid;
@@ -191,3 +194,4 @@
         max-width: 780px;
     }
 }
+

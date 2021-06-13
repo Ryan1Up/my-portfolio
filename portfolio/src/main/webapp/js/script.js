@@ -11,17 +11,18 @@ function onLinkLoad(){
     document.querySelectorAll(".about_me_nav").forEach(item => item.addEventListener("click", event => {
         event.preventDefault();
     }, false))
-    
 }
 
 function loadAboutNavMain() {
     $("#about-content").load("../aboutMeContent.html");
     console.log("About Me");
 }
-function loadAboutNavEducation(event) {
-    console.log("Education");
+
+function loadAboutNavEducation() {
+    $("#about-content").load("../aboutMeEducation.html");
 }
-function loadAboutNavSkills(event) {
+
+function loadAboutNavSkills() {
    
     $("#about-content").load("../languages.html");
 }

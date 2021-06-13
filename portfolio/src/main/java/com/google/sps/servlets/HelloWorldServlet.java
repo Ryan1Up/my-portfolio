@@ -21,16 +21,6 @@ public class HelloWorldServlet extends HttpServlet {
     response.getWriter().println("<h1>" + messages[responeChooser]+"</h1>");
   }
 
-  @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException { 
-      response.setContentType("text/html;");
-      String name = request.getParameter("name");
-      String email = request.getParameter("email");
-
-      System.out.println("Username: " + name + "\nEmail: " + email);
-
-      response.getWriter().println("<h1>Successfull Data Transfer" + name + " " + email +"</h1>");
-  }
 }
 
 
