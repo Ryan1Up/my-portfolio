@@ -1,6 +1,6 @@
 function loadNav() {
     
-    $(".navBar").load("../html/nav.html");
+    $(".navbar").load("../html/nav.html");
 }
 
 function loadFooter() {

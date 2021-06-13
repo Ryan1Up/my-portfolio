@@ -17,7 +17,7 @@
 }
 
 .main-content-img img {
-    border-bottom-left-radius: 70px;
+    border-bottom-left-radius: 10%;
     border-top-left-radius: 120px;
     border-bottom-right-radius: 120px;
     border-top-right-radius: 70px;

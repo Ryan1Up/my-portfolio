@@ -16,10 +16,27 @@
         <script src="../js/script.js"></script>
         </head>
     
-<body onload="loadNav(), loadFooter()">
-    <div class="navbar"></div>
-       
+<body onload="loadNav(), loadFooter(), onLinkLoad(), loadAboutNavMain()">
+    <div class="navbar">
+        
+    </div>
+
+    <div class="about-me-main-container">
+        <div class="grid grid-3">
+            <div class="about-me-nav card">
+                <nav>
+                    <ul>
+                        <li><a class="about_me_nav" onclick="loadAboutNavMain()" href="">About Me</a></li>
+                        <li><a class="about_me_nav" onclick="loadAboutNavEducation(this)" href="">Education</a></li>
+                        <li><a class="about_me_nav" onclick="loadAboutNavSkills(this)" href="">Skills</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="card" id="about-content"></div>
+        </div>
+    </div>    
                 
     <footer class="footer">
+        
     </footer>
 </body>

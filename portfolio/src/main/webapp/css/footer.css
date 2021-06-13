@@ -1,6 +1,6 @@
 .footer {
     background: linear-gradient(to right, var(--secondary-color),  var(--primary-color));
-    text-align: center;   
+    margin: auto;
 }
 
 .footer a {
@@ -11,7 +11,7 @@
 
 .footer .container {
     height: auto;
-    margin: 0;
+    margin: auto;
     padding: 10px;
     color: #fff;
     justify-content: center;
@@ -28,4 +28,9 @@
 }
 .footer .social {
     margin: 10px;
+}
+
+.footer .grid {
+    align-items: center;
+    justify-content: center;
 }
