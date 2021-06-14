@@ -1,11 +1,52 @@
+
+
 function loadNav() {
     
     $(".navbar").load("../nav.html");
 }
-function test() {
-    console.log("Test");
-    
+
+function loadFooter() {
+    $(".footer").load("../footer.html");
 }
+
+function onLinkLoad(){
+    document.querySelectorAll(".about_me_nav").forEach(item => item.addEventListener("click", event => {
+        event.preventDefault();
+    }, false))
+}
+
+
+
+function loadForm() {
+
+    $(".mainForm").load("../form.html");
+
+    if(sessionStorage.getItem("contacted") === "true"){
+        console.log("Contacted");
+        loadThankYou();
+    }
+    loadThankYou();
+}
+
+function loadThankYou() {
+    document.getElementById("contactFromContainer").innerHTML = "<h3 style=\"padding: 30px;\">Thank You!</h3>";
+}
+
+function loadAboutNavMain() {
+    $("#about-content").load("../aboutMeContent.html");
+    console.log("About Me");
+}
+
+function loadAboutNavEducation() {
+    $("#about-content").load("../aboutMeEducation.html");
+}
+
+function loadAboutNavSkills() {
+   
+    $("#about-content").load("../languages.html");
+}
+
+
 
 const cDesc =  "<h3>C++</h3><p>I first started to learn to code using C++. I am familiar with most of its basic concepts enough" + 
     " to do basic data and file processing. Most of my early projects were in C++, and I still" +
@@ -42,26 +83,3 @@ function loadDesc(arg) {
 
 }
 
-function loadFooter() {
-    $(".footer").load("../footer.html");
-}
-
-function onLinkLoad(){
-    document.querySelectorAll(".about_me_nav").forEach(item => item.addEventListener("click", event => {
-        event.preventDefault();
-    }, false))
-}
-
-function loadAboutNavMain() {
-    $("#about-content").load("../aboutMeContent.html");
-    console.log("About Me");
-}
-
-function loadAboutNavEducation() {
-    $("#about-content").load("../aboutMeEducation.html");
-}
-
-function loadAboutNavSkills() {
-   
-    $("#about-content").load("../languages.html");
-}

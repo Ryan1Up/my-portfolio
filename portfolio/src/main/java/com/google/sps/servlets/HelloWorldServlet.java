@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/randMessage")
 public class HelloWorldServlet extends HttpServlet {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -8494463698833202272L;
     private static final Random rand = new Random();
     private static final String[] messages = {"Hello There", "General Kenobi"};
   @Override
@@ -22,5 +26,3 @@ public class HelloWorldServlet extends HttpServlet {
   }
 
 }
-
-
