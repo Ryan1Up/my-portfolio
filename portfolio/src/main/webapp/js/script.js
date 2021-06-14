@@ -4,6 +4,7 @@ function loadNav() {
 }
 function test() {
     console.log("Test");
+    
 }
 
 const cDesc =  "<h3>C++</h3><p>I first started to learn to code using C++. I am familiar with most of its basic concepts enough" + 

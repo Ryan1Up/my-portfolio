@@ -13,6 +13,7 @@
 
 .form-control {
     margin: 20px 0;
+    width: auto;
 }
 
 input:focus {
@@ -41,5 +42,15 @@ textarea {
     line-height: 16px;
     padding: 20px;
     font-size: 16px;
+    max-width: 100%;
 }
 
+
+
+@media (max-width: 700px) {
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        max-width: 350px;
+    }
+}
