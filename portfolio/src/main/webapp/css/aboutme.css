@@ -46,12 +46,17 @@
     grid-column: 3 / span 1;
 
 }
+
+#langDesc {
+    margin: 20px;
+}
+
 .languages .card {
     text-align: center;
     margin: 18px 10px 40px;
 }
 
-.languages .card:hover {
+.languages .flex .card:hover {
     transform: translateY(-15px);
     transition: transform 0.2s ease-in;
     background-color: var(--light);
