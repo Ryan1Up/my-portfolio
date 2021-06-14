@@ -1,0 +1,45 @@
+
+.card {
+    background-color: rgb(211, 211, 211);
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.container .grid {
+    grid-template-columns: 1fr;
+    height: auto;
+}
+
+.form-control {
+    margin: 20px 0;
+}
+
+input:focus {
+    outline: none;
+    border-radius: 5px;
+}
+
+.grid-item {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+input[type="text"],
+input[type="email"] {
+    border: 0;
+    background-color: rgb(211, 211, 211);
+    border-bottom: 1px #333 solid;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+textarea {
+    line-height: 16px;
+    padding: 20px;
+    font-size: 16px;
+}
+
