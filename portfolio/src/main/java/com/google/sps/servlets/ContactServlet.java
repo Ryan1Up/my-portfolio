@@ -6,53 +6,50 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 /** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
 @WebServlet("/contact-handler")
 public class ContactServlet extends HttpServlet {
 
-    
+    private static ArrayList<String> contactRequests = new ArrayList<>();
     /**
      *
      */
     private static final long serialVersionUID = 1L;
 
     @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    
-    // Get the value entered in the form.
-    String textValue = request.getParameter("name");
-    String emailValue = request.getParameter("emailId");
-    
-    String message = request.getParameter("msgId");
-    
-    HttpSession ses = request.getSession();
-    System.out.println(ses.getAttribute("contacted"));
-    ses.setAttribute("contacted", "true");
-    // Print the value so you can see it in the server logs.
-    System.out.println("You submitted: " + textValue);
-    System.out.println("You submitted: " + emailValue);
-    System.out.println("You submitted: "+ message);
-    InetAddress ip;
-    try {
-        ip = InetAddress.getLocalHost();
-        String ipS = ip.toString();
-        ipS = ipS.split("/", 0)[1];
-        System.out.println(ipS);
-        String[] emailContents = {textValue, emailValue, ipS, message};
-        SendEmail.sendEmail(emailContents);
-       
-    } catch (UnknownHostException e) {
-        e.printStackTrace();
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        String[] contactRequestInfo = new String[3];
+        parseContactRequest(request, contactRequestInfo);
+
+        saveRequest(contactRequestInfo);
+
+        response.sendRedirect(request.getContextPath() + "/contactThankYou.html");
     }
-    
-    response.sendRedirect(request.getContextPath() + "/contactThankYou.html");
-    
 
-  }
+    private static void parseContactRequest(HttpServletRequest request, String[] requestInfo) {
+        // Assumes 3 Input Fields Fromt the Request Field
+        // Assumes a Name Field, Email Field, and Message Field
+        requestInfo[0] = request.getParameter("name");
+        requestInfo[1] = request.getParameter("emailId");
+        String msg = request.getParameter("msg");
+        if( msg == null) msg = "No Message";
+        requestInfo[2] = msg;
+        for (String field : requestInfo) {
+            System.out.println(field);
+        }
+    }
 
-  
+    private void saveRequest(String[] contactRequestInfo) throws NullPointerException {
+        String requestInfo = "";
+        requestInfo += "Name: " + contactRequestInfo[0];
+        requestInfo += "\nEmail: " + contactRequestInfo[1];
+        requestInfo += "\nMessage: " + contactRequestInfo[2];
+        System.out.println(requestInfo);
+        contactRequests.add(requestInfo);
+       
+       
+   }
 }

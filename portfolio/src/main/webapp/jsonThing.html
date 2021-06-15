@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <head>
+        <meta lang="en-US">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/utility.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/maincontent.css">
+        <title>Portfolio | Ryan Anderson</title>
+        <link rel="icon" href="images/otter.png">
+        <script src="https://kit.fontawesome.com/5541884fd5.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+<body onload="loadNav(), loadFooter()">
+    <script>sessionStorage.setItem("contacted", "false");</script>
+    <div class="navbar">
+        
+    </div>
+    <div class="json container grid grid-2" style="margin: 20px">
+        <form action="/JsonMsg" method="POST">
+            <h4>Please Enter Values in the form if "Key:Value" pairs, each separated by a comma or new line:</h4>
+            <textarea class="form-control" id="inputs" name="inputs" rows="12" cols="50" placeholder="Key Values Pairs"></textarea>
+            <div><input id="submitBtn" class="btn" type="submit" value="Submit"></div>            
+        </form>
+    
+        <div>
+            <div class="btn btn-outline" onclick="getJson()">Request Json</div>
+            <div class="card">
+                <p class="retJason" id="jsonResponseP"></p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer"></footer>
+</body>
+</html>

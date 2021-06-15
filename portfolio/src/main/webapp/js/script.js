@@ -9,13 +9,41 @@ function loadFooter() {
     $(".footer").load("../footer.html");
 }
 
+
+
 function onLinkLoad(){
     document.querySelectorAll(".about_me_nav").forEach(item => item.addEventListener("click", event => {
         event.preventDefault();
     }, false))
 }
 
+var servletList = {};
+var hasRequested = false;
 
+async function getJson() {
+    hasRequested = true;
+    const responseFromServer = await fetch("/JsonMsg");
+    const jsonFromResponse = await responseFromServer.json();
+
+    console.log(jsonFromResponse);
+
+    const responseContainer = document.getElementById("jsonResponseP");
+
+    var newServletList = Object.keys(jsonFromResponse);
+
+    console.log(servletList);
+    if(newServletList !== servletList){
+        servletList = newServletList;
+        responseContainer.innerHTML = "";
+
+        for(field in servletList){
+            responseContainer.innerHTML += "<div class=\"card btn btn-outline\">" + servletList[field] + "</div>";
+        }
+    }
+    
+    
+    
+}
 
 function loadForm() {
 

@@ -22,7 +22,7 @@ public class SendEmail {
       // Assuming you are sending email from localhost
       String host = content[hostIndex];
 
-      // Get system properties
+      // I have to set the properties manually
       Properties properties = System.getProperties();
 
       // Setup mail server
