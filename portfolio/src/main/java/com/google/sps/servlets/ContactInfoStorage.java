@@ -11,7 +11,12 @@ import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +28,12 @@ import org.jsoup.safety.Whitelist;
 @WebServlet("/contact-storage-handler")
 public class ContactInfoStorage extends HttpServlet {
 
-    //Return a Json containing all the contact requests on file
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    // Return a Json containing all the contact requests on file
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //Get instance of Data store service
@@ -89,10 +99,19 @@ public class ContactInfoStorage extends HttpServlet {
     //Stores the contact request made into permanent storage
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String msg = request.getParameter("msgId");
+
         /*Retrieve each of the parameters: name, email, and msgId, and clean them of HTML code */
-        String name = Jsoup.clean(request.getParameter("name"), Whitelist.none());
-        String email = Jsoup.clean(request.getParameter("email"), Whitelist.none());
-        String msg = Jsoup.clean(request.getParameter("msgId"), Whitelist.none());
+        name = Jsoup.clean(name, Whitelist.none());
+        email = Jsoup.clean(email, Whitelist.none());
+        if(msg != null){
+            msg = Jsoup.clean(request.getParameter("msgId"), Whitelist.none());
+        }
+        else {
+            msg = "Default: No Message";
+        }
         long timeStamp = System.currentTimeMillis(); //For ordering later
         //get a new instance of the data store service
         Datastore dataStore = DatastoreOptions.getDefaultInstance().getService();
@@ -109,6 +128,12 @@ public class ContactInfoStorage extends HttpServlet {
             .build();
 
         dataStore.put(contactEntity);
+        /**Using Java.time library to simplify Time outputs */
+        String time = LocalTime.now( ZoneId.of( "America/Los_Angeles")).truncatedTo(ChronoUnit.SECONDS).toString();
+        System.out.println("Name: " + name + 
+                         "\nEmail: " + email +
+                         "\nTimestamp: " + time +
+                         "\nMessage: \n" + msg);
         response.sendRedirect("/contactThankYou.html");
     }
 
