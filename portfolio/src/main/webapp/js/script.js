@@ -62,7 +62,7 @@ function loadThankYou() {
 
 function loadAboutNavMain() {
     $("#about-content").load("../aboutMeContent.html");
-    console.log("About Me");
+    
 }
 
 function loadAboutNavEducation() {

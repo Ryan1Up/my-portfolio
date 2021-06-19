@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
-/** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
+/** Handles "Contact Me form" inputs and stores them in the servers ArrayList of contact requests */
 @WebServlet("/contact-handler")
 public class ContactServlet extends HttpServlet {
 
@@ -26,6 +26,13 @@ public class ContactServlet extends HttpServlet {
 
         saveRequest(contactRequestInfo);
 
+        String requestInfo = "";
+        requestInfo += "Name: " + contactRequestInfo[0];
+        requestInfo += "\nEmail: " + contactRequestInfo[1];
+        requestInfo += "\nMessage: " + contactRequestInfo[2];
+
+        System.out.println(requestInfo);
+
         response.sendRedirect(request.getContextPath() + "/contactThankYou.html");
     }
 
@@ -34,12 +41,9 @@ public class ContactServlet extends HttpServlet {
         // Assumes a Name Field, Email Field, and Message Field
         requestInfo[0] = request.getParameter("name");
         requestInfo[1] = request.getParameter("emailId");
-        String msg = request.getParameter("msg");
+        String msg = request.getParameter("msgId");
         if( msg == null) msg = "No Message";
-        requestInfo[2] = msg;
-        for (String field : requestInfo) {
-            System.out.println(field);
-        }
+        requestInfo[2] = msg;        
     }
 
     private void saveRequest(String[] contactRequestInfo) throws NullPointerException {
@@ -47,9 +51,6 @@ public class ContactServlet extends HttpServlet {
         requestInfo += "Name: " + contactRequestInfo[0];
         requestInfo += "\nEmail: " + contactRequestInfo[1];
         requestInfo += "\nMessage: " + contactRequestInfo[2];
-        System.out.println(requestInfo);
-        contactRequests.add(requestInfo);
-       
-       
+        contactRequests.add(requestInfo);      
    }
 }

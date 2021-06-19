@@ -9,8 +9,7 @@ public class SendEmail {
 
     private static final int subjectIndex = 0;
     private static final int fromIndex = 1;
-    private static final int hostIndex = 2;
-    private static final int messageIndex = 3;
+    private static final int messageIndex = 2;
 
    public static void sendEmail(String[] content) {    
       // Recipient's email ID needs to be mentioned.
@@ -19,17 +18,25 @@ public class SendEmail {
       // Sender's email ID needs to be mentioned
       String from = content[fromIndex];
 
-      // Assuming you are sending email from localhost
-      String host = content[hostIndex];
 
-      // I have to set the properties manually
-      Properties properties = System.getProperties();
+      Properties props = new Properties();  
+          props.put("mail.smtp.user", to);  
+          props.put("mail.smtp.host", "smtp.gmail.com");
+          props.put("mail.smtp.starttls.enable","true");    
+          props.put("mail.smtp.socketFactory.port", "465");    
+          props.put("mail.smtp.socketFactory.class",    
+                    "javax.net.ssl.SSLSocketFactory");    
+          props.put("mail.smtp.auth", "true");    
+          props.put("mail.smtp.port", "465");    
 
-      // Setup mail server
-      properties.setProperty("mail.smtp.host", host);
 
-      // Get the default Session object.
-      Session session = Session.getDefaultInstance(properties);
+          //get Session   
+          Session session = Session.getDefaultInstance(props,    
+           new javax.mail.Authenticator() {    
+           protected PasswordAuthentication getPasswordAuthentication() {    
+           return new PasswordAuthentication(to,"H2vhf794!");  
+           }    
+          });    
 
       try {
          // Create a default MimeMessage object.
