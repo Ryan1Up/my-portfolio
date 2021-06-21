@@ -11,12 +11,10 @@ import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
@@ -85,6 +83,7 @@ public class ContactInfoStorage extends HttpServlet {
             long ID = resultContact.getKey().getId();
 
             Contact contact = new Contact(name, email, msg, ID);
+           
             contacts.add(contact);
         }
 
@@ -134,6 +133,7 @@ public class ContactInfoStorage extends HttpServlet {
                          "\nEmail: " + email +
                          "\nTimestamp: " + time +
                          "\nMessage: \n" + msg);
+        //SendEmail.sendEmail(name, email, msg);
         response.sendRedirect("/contactThankYou.html");
     }
 
