@@ -133,7 +133,7 @@ public class ContactInfoStorage extends HttpServlet {
                          "\nEmail: " + email +
                          "\nTimestamp: " + time +
                          "\nMessage: \n" + msg);
-        //SendEmail.sendEmail(name, email, msg);
+        
         response.sendRedirect("/contactThankYou.html");
     }
 

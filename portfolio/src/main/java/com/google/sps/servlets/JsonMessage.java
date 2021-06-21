@@ -9,11 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
+// import com.google.gson.Gson;
 
 @WebServlet("/JsonMsg")
 public class JsonMessage extends HttpServlet {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private static List<String> servletContent = new ArrayList<>();
 
     @Override
@@ -75,10 +79,10 @@ public class JsonMessage extends HttpServlet {
         System.out.println(json);
         return json;
     }
-
+/*
     private String convertToJsonUsingGson() {
-    Gson gson = new Gson();
-    String json = gson.toJson(servletContent);
-    return json;
+        Gson gson = new Gson();
+        return gson.toJson(servletContent);
     }
+*/
 }
