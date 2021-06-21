@@ -3,5 +3,6 @@
 .project
 .settings/
 target/
-credentials.json
-/tokens
+tokens/
+resources/
+
