@@ -1,0 +1,120 @@
+
+.main-content {    
+    color: #333;
+    position: relative;
+    text-align: center;
+
+}
+
+.main-content .card {
+    color: #fff;
+    background: linear-gradient(to right, var(--secondary-color),  var(--primary-color));
+}
+.main-content .container {
+    height: auto;
+    
+}
+
+.main-content-img img {
+    border-bottom-left-radius: 70px;
+    border-top-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+    border-top-right-radius: 70px;
+    max-width: 400px;
+    box-shadow: 0 12px 20px rgb(0,0,0,0.3);
+    margin: 10px;
+    justify-self: flex-start;
+   
+}
+
+.main-content-text{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.main-content .grid h1 {
+    font-size: 40px;
+}
+
+.main-content .grid {
+    overflow: visible;
+    grid-template-columns: 45% 55%;
+    
+}
+
+.main-content-img h1 {
+    color: rgb(114, 114, 114);
+}
+
+.text-left {
+    text-align: left;
+}
+
+.otter-container {
+    background: linear-gradient(to right, rgb(65, 219, 194), rgb(30, 213, 245));
+    border-radius: 35%;
+}
+
+.otter-container .flex {
+    justify-content: space-between;
+}
+.otter-container img {
+    width: 300px;
+    border-radius: 35%;
+    margin: auto;    
+}
+
+.otter-container .container > *:nth-child(1),
+.otter-container .container > *:nth-child(3)
+{
+    animation: swimRight 3s linear alternate infinite;
+}
+.otter-container .container > *:nth-child(2) {
+    animation: swimLeft 3s linear alternate infinite;
+}
+.otter-container img:hover {
+    transform: translateY(-20px);
+    transition: transform 0.5s ease-in;
+}
+
+.otter-container .flex {
+        flex-wrap: wrap;
+    }
+
+@keyframes swimLeft {
+    0% {
+        transform: translateX(-60px);
+    }
+    50%{
+        transform: translateX(-35px)
+    }
+    100% {
+        transform: translateX(-25px);
+    }
+}
+
+@keyframes swimRight {
+    0% {
+        transform: translateX(30px);
+    }
+    50%{
+        transform: translateX(25px)
+    }
+    100% {
+        transform: translateX(15px);
+    }
+}
+
+@media (max-width: 800px){
+
+    .main-content .grid {
+        grid-template-columns: 1fr;
+    }
+
+
+}
