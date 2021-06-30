@@ -1,4 +1,4 @@
 runtime: java11
-includes:
-  - /resources/env_variables.yaml
 
+env_variables:
+ CLIENT_ID: "THIS_IS_A_TEMPORARY_ID"

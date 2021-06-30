@@ -1,5 +1,4 @@
 
-
 function loadNav() {
     
     $(".navbar").load("../nav.html");
