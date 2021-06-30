@@ -6,3 +6,4 @@
 target/
 src/main/resources/
 client_secret.json
+portfolio/src/main/resources/client_secret.json
