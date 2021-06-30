@@ -26,7 +26,7 @@ public class AdminLogin extends HttpServlet {
     private static OAuth2Credentials appCredentials;
     private static String AUTH_REQ_URL;
     protected static Datastore dataStore;
-    private static final int TEST_PROD = 1;
+    private static final int TEST_PROD = 0;
     /**
      * init() initialized the authorization code flow to Authorize
      * "Ryan's Portfolio" to utilize the Gmail API to send Emails

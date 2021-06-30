@@ -43,7 +43,7 @@ public class AdminCallBack extends HttpServlet {
     protected static Datastore dataStore;
     private static String TOKEN_REQ_URL;
     private static String USER_INFO_URL = "https://www.googleapis.com/oauth2/v1/userinfo?&access_token=";
-    private static final int TEST_PROD = 1;
+    private static final int TEST_PROD = 0;
     private static HttpClientBuilder builder;
     private static CloseableHttpClient httpClient;
 
