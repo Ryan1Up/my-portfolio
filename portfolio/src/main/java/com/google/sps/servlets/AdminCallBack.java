@@ -43,7 +43,8 @@ public class AdminCallBack extends HttpServlet {
     protected static Datastore dataStore;
     private static String TOKEN_REQ_URL;
     private static String USER_INFO_URL = "https://www.googleapis.com/oauth2/v1/userinfo?&access_token=";
-    private static final int TEST_PROD = 0;
+     private static final int TESTING = 0;
+    private static final int PRODUCTION = 1;
     private static HttpClientBuilder builder;
     private static CloseableHttpClient httpClient;
 
@@ -97,8 +98,8 @@ public class AdminCallBack extends HttpServlet {
     private static void createAndStoreCredentials(HttpServletRequest req) throws ClientProtocolException, IOException {
 
         JsonObject newCredentials = createCredentials(req);
-
-        storeCredentials(newCredentials);
+        
+        storeCredentials(newCredentials, req);
     }
 
     private static JsonObject createCredentials(HttpServletRequest req) throws ClientProtocolException, IOException {
@@ -146,7 +147,7 @@ public class AdminCallBack extends HttpServlet {
                 .append(appCredentials.getClient_id()).append("&client_secret=")
                 .append(appCredentials.getClient_secret()).append("&code=").append(codeForAccessToken)
                 .append("&grant_type=authorization_code").append("&redirect_uri=")
-                .append(appCredentials.getRedirect_uris()[TEST_PROD]).toString();
+                .append(appCredentials.getRedirect_uris()[TESTING]).toString();
 
     }
 
@@ -157,7 +158,6 @@ public class AdminCallBack extends HttpServlet {
         HttpEntity entity = response.getEntity();
         // Stringify the entity into a Json String
         String body = EntityUtils.toString(entity);
-        System.out.println(body);
 
         // turn Stringified JSON into JSON object
         JsonObject returnJson = new Gson().fromJson(body, JsonObject.class);
@@ -166,7 +166,7 @@ public class AdminCallBack extends HttpServlet {
 
     }
 
-    private static void storeCredentials(JsonObject userCredentials) throws ClientProtocolException, IOException {
+    private static void storeCredentials(JsonObject userCredentials, HttpServletRequest req) throws ClientProtocolException, IOException {
         /**
          * userCredentials contain the current access_token, refresh_token, etc
          * 
@@ -177,9 +177,12 @@ public class AdminCallBack extends HttpServlet {
          */
 
         String access_token = userCredentials.get("access_token").toString().replaceAll("\"", "");
+        req.getSession().setAttribute("access_token", access_token);
+
         JsonObject userInfo = getUserInfo(access_token);
 
         String profileId = userInfo.get("id").toString().replaceAll("\"", "");
+        req.getSession().setAttribute("userId", profileId);
         KeyFactory keyFactory = dataStore.newKeyFactory().setKind("UserProfile");
         Key userIdKey = keyFactory.newKey(profileId);
         if (!isUserInDatastore(userIdKey)) {

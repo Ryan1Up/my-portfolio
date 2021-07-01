@@ -26,12 +26,8 @@ public class ContactServlet extends HttpServlet {
 
         saveRequest(contactRequestInfo);
 
-        String requestInfo = "";
-        requestInfo += "Name: " + contactRequestInfo[0];
-        requestInfo += "\nEmail: " + contactRequestInfo[1];
-        requestInfo += "\nMessage: " + contactRequestInfo[2];
 
-        System.out.println(requestInfo);
+        
 
         response.sendRedirect(request.getContextPath() + "/contactThankYou.html");
     }
@@ -40,10 +36,10 @@ public class ContactServlet extends HttpServlet {
         // Assumes 3 Input Fields Fromt the Request Field
         // Assumes a Name Field, Email Field, and Message Field
         requestInfo[0] = request.getParameter("name");
-        requestInfo[1] = request.getParameter("emailId");
+        requestInfo[1] = request.getParameter("emailId") + "\n";
         String msg = request.getParameter("msgId");
         if( msg == null) msg = "No Message";
-        requestInfo[2] = msg;        
+        requestInfo[1] += msg;        
     }
 
     private void saveRequest(String[] contactRequestInfo) throws NullPointerException {
