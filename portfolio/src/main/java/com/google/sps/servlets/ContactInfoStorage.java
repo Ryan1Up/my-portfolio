@@ -41,7 +41,7 @@ import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.auth.oauth2.TokenResponse;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 
-@WebServlet("/contact-storage-handler")
+@WebServlet("/contact-storage-handler1")
 public class ContactInfoStorage extends HttpServlet {
 
     /**
@@ -51,46 +51,7 @@ public class ContactInfoStorage extends HttpServlet {
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
     // Return a Json containing all the contact requests on file
-    @Override
-    public void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
-        // Get instance of Data store service
-        final Datastore dataStore = DatastoreOptions.getDefaultInstance().getService();
-
-        // Build a Query for data, optional: OrderBy Timestamps
-        final Query<Entity> query = Query.newEntityQueryBuilder().setKind("Contact")
-                .setOrderBy(OrderBy.desc("timeStamp")).build();
-        // Retrieve a list of Entities from the data store that match the query
-        final QueryResults<Entity> queryResults = dataStore.run(query);
-
-        // A small helper class to help organize all the elements in a "Contact" Entity
-
-        // Collection that will contain all the elements returned from Query
-        final List<Contact> contacts = new ArrayList<>();
-        final Gson gson = new Gson();
-
-        // Load all Query Results into Collection Container
-        while (queryResults.hasNext()) {
-            final Entity resultContact = queryResults.next();
-
-            final String name = resultContact.getString("name");
-            final String email = resultContact.getString("email");
-            final String msg = resultContact.getString("msg");
-            final long ID = resultContact.getKey().getId();
-
-            final Contact contact = new Contact(name, email, msg, ID);
-            // String jsonString = "{ \"Name\":" + name + "}"
-            contacts.add(contact);
-        }
-
-        // Create a new Gson Instance to format return values
-
-        // Set return type to Json
-        response.setContentType("application/json;");
-        // Print Json object to response
-        response.getWriter().println(gson.toJson(contacts));
-
-    }
-
+   
     // Stores the contact request made into permanent storage
     @Override
     public void doPost(final HttpServletRequest request, final HttpServletResponse response) throws IOException {

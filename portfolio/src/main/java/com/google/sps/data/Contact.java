@@ -4,9 +4,9 @@ public class Contact {
     private String name;
     private String email;
     private String msg;
-    private long ID;
+    private String ID;
 
-    public Contact(String name, String email, String msg, long ID) {
+    public Contact(String name, String email, String msg, String ID) {
         this.name = name;
         this.email = email;
         this.msg = msg;
@@ -25,7 +25,7 @@ public class Contact {
         return this.msg;
     }
 
-    protected long getID() {
+    protected String getID() {
         return this.ID;
     }
 }

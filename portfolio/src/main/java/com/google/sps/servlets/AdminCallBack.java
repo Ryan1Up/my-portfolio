@@ -29,7 +29,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
-@WebServlet("/oAuth2Callback")
+@WebServlet("/OAuth2Callback")
 public class AdminCallBack extends HttpServlet {
 
     /**

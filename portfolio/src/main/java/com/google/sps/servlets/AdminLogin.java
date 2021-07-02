@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.api.services.gmail.GmailScopes;
 import com.google.cloud.datastore.Datastore;
-import com.google.cloud.datastore.DatastoreOptions;
 import com.google.sps.data.OAuth2Credentials;
 import com.google.sps.util.CredentialManager;
+import com.google.sps.util.DatastoreModule;
 
 @WebServlet("/AdminLogin")
 public class AdminLogin extends HttpServlet {
@@ -27,7 +27,7 @@ public class AdminLogin extends HttpServlet {
     private static String AUTH_REQ_URL;
     protected static Datastore dataStore;
     private static final int TESTING = 0;
-    private static final int PRODUCTION = 1;
+  //  private static final int PRODUCTION = 1;
     /**
      * init() initialized the authorization code flow to Authorize
      * "Ryan's Portfolio" to utilize the Gmail API to send Emails
@@ -37,7 +37,7 @@ public class AdminLogin extends HttpServlet {
 
         try{
             setAppCredentials();
-            setDatastore();
+            connectToDatastore();
             buildAuthUrl();
 
         }catch (final IOException e) {
@@ -53,8 +53,10 @@ public class AdminLogin extends HttpServlet {
     }
 
     private void checkLogin(final HttpServletRequest req, final HttpServletResponse res) throws IOException {
-            if( req.getSession().getAttribute("access_token") != null)
-                    res.sendRedirect(req.getContextPath()+ "/index.html");
+            if (DatastoreModule.isAuthorized())
+            {
+                res.sendRedirect(req.getContextPath()+ "/index.html");
+            }
             
     }
 
@@ -75,7 +77,8 @@ public class AdminLogin extends HttpServlet {
         appCredentials = CredentialManager.setCredentials(APP_CREDENTIALS);
     }
 
-    private static void setDatastore(){
-        dataStore = DatastoreOptions.getDefaultInstance().getService();
+     private static void connectToDatastore() {
+        DatastoreModule.init();
     }
+
 }
