@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.cloud.datastore.Datastore;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.sps.data.OAuth2Credentials;
@@ -89,6 +89,8 @@ public class AdminLoginCallback extends HttpServlet {
          *      refresh_token
          *      expiration
          *      profile_id
+         *      client_id
+         *      client_secret
          */
         
          /**
@@ -141,7 +143,7 @@ public class AdminLoginCallback extends HttpServlet {
 
     }
 
-        private static HttpResponse sendTokenRequest(String code) throws ClientProtocolException, IOException {
+    private static HttpResponse sendTokenRequest(String code) throws ClientProtocolException, IOException {
 
         buildTokenUri(code);
         
@@ -150,7 +152,7 @@ public class AdminLoginCallback extends HttpServlet {
         return HTTP_CLIENT.execute(request);
     }
 
-       private static void buildTokenUri(String code){
+    private static void buildTokenUri(String code){
 
         StringBuilder sb = new StringBuilder().append(APP_CREDENTIALS.getToken_uri()).append("?").append("&client_id=")
                 .append(APP_CREDENTIALS.getClient_id()).append("&client_secret=")
@@ -160,7 +162,7 @@ public class AdminLoginCallback extends HttpServlet {
         TOKEN_REQ_URL = sb.toString();        
     }
 
-       private static JsonObject extractJsonFromResponse(HttpResponse response) throws ParseException, IOException {
+    private static JsonObject extractJsonFromResponse(HttpResponse response) throws ParseException, IOException {
         HttpEntity entity = response.getEntity();
         // Stringify the entity into a Json String
         String body = EntityUtils.toString(entity);
