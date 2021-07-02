@@ -26,8 +26,8 @@ public class AdminLogin extends HttpServlet {
     private static OAuth2Credentials appCredentials;
     private static String AUTH_REQ_URL;
     protected static Datastore dataStore;
-    private static final int TESTING = 0;
-  //  private static final int PRODUCTION = 1;
+  //  private static final int TESTING = 0;
+    private static final int PRODUCTION = 1;
     /**
      * init() initialized the authorization code flow to Authorize
      * "Ryan's Portfolio" to utilize the Gmail API to send Emails
@@ -65,7 +65,7 @@ public class AdminLogin extends HttpServlet {
                 .append(appCredentials.getAuth_uri()).append("?")
                 .append("&client_id=").append(appCredentials.getClient_id())
                 .append("&response_type=code")
-                .append("&redirect_uri=").append(appCredentials.getRedirect_uris()[TESTING])
+                .append("&redirect_uri=").append(appCredentials.getRedirect_uris()[PRODUCTION])
                 .append("&scope=").append(GmailScopes.GMAIL_SEND + " " + GmailScopes.GMAIL_COMPOSE + " https://www.googleapis.com/auth/userinfo.profile")
                 .append("&state=adminLogin59")
                 .append("&access_type=offline")

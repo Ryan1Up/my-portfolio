@@ -33,8 +33,8 @@ public class AdminLoginCallback extends HttpServlet {
     private static OAuth2Credentials APP_CREDENTIALS;
     private static String TOKEN_REQ_URL;
     private static String USER_INFO_URL = "https://www.googleapis.com/oauth2/v1/userinfo?&access_token=";
-    private static final int TESTING = 0;
-   // private static final int PRODUCTION = 1;
+   // private static final int TESTING = 0;
+    private static final int PRODUCTION = 1;
     private static CloseableHttpClient HTTP_CLIENT;
 
    
@@ -158,7 +158,7 @@ public class AdminLoginCallback extends HttpServlet {
                 .append(APP_CREDENTIALS.getClient_id()).append("&client_secret=")
                 .append(APP_CREDENTIALS.getClient_secret()).append("&code=").append(code)
                 .append("&grant_type=authorization_code").append("&redirect_uri=")
-                .append(APP_CREDENTIALS.getRedirect_uris()[TESTING]);
+                .append(APP_CREDENTIALS.getRedirect_uris()[PRODUCTION]);
         TOKEN_REQ_URL = sb.toString();        
     }
 
