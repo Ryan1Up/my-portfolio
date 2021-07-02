@@ -154,7 +154,7 @@ public class DatastoreModule {
             refresh_token={Refresh_token}
             grant_type=refresh_token
 
-            https://accounts.google.com/o/oauth2/token refresh_token=1/nJZGF7hIySVtVCl8I-Y3KfXAPk84gD0X6ym7hQS8gcc client_id=XXXX client_secret=XXXX grant_type=refresh_token
+            https://accounts.google.com/o/oauth2/token refresh_token={Refresh_token} client_id=XXXX client_secret=XXXX grant_type=refresh_token
          */
        
         //Get the Credentials
